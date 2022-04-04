@@ -10,8 +10,8 @@ import Foundation
 struct Country: Decodable {
     let name: Name
     let capital: [String]?
-    let flag: String?
     let maps: Maps
+    let latlng: [Double]
     let population: Int
     let timezones: [String]
     let continents: [String]
@@ -26,12 +26,11 @@ struct Name: Decodable {
 
 struct Maps: Codable {
     var googleMaps: String
-    var openStreetMaps: String
-    
+//    var openStreetMaps: String
 }
 
 struct Flags: Codable {
     var png: String
-    var svg: String
+//    var svg: String
 }
 

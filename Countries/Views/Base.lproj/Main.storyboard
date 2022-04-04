@@ -18,6 +18,7 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="search about a country" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X10-BE-2Yn">
                                 <rect key="frame" x="20" y="140" width="339" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -35,13 +36,17 @@
                                 <rect key="frame" x="0.0" y="182" width="414" height="714"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="irj-0j-ZCb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="irj-0j-ZCb">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="irj-0j-ZCb" id="d0R-fG-wKR">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="0.92941176469999998" blue="0.59902854250000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <segue destination="w3V-XQ-dXU" kind="show" identifier="goToDetils" id="0Yc-bE-eME"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -71,6 +76,213 @@
             </objects>
             <point key="canvasLocation" x="1081.1594202898552" y="-6.6964285714285712"/>
         </scene>
+        <!--Country Name-->
+        <scene sceneID="cO2-Pw-dhO">
+            <objects>
+                <viewController storyboardIdentifier="Detils" id="w3V-XQ-dXU" customClass="DetailsViewController" customModule="Countries" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vuO-No-fS1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="d2U-mX-6pE">
+                                <rect key="frame" x="20" y="160" width="374" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="roA-cb-cGS"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8aW-2E-BqE">
+                                <rect key="frame" x="20" y="380" width="374" height="482"/>
+                                <subviews>
+                                    <progressView opaque="NO" contentMode="center" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="vqS-uF-iBF">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="28.5"/>
+                                    </progressView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LwY-b9-PUb">
+                                        <rect key="frame" x="0.0" y="32.5" width="374" height="28.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Official Name :" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rl5-Bz-eyA">
+                                                <rect key="frame" x="0.0" y="0.0" width="182" height="28.5"/>
+                                                <fontDescription key="fontDescription" name="CourierNewPS-BoldItalicMT" family="Courier New" pointSize="19"/>
+                                                <color key="textColor" systemColor="systemBlueColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cT0-v1-SVx">
+                                                <rect key="frame" x="192" y="0.0" width="182" height="28.5"/>
+                                                <fontDescription key="fontDescription" name="Palatino-BoldItalic" family="Palatino" pointSize="19"/>
+                                                <color key="textColor" systemColor="systemBlueColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <progressView opaque="NO" contentMode="center" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hsL-tM-8fN">
+                                        <rect key="frame" x="0.0" y="75.5" width="374" height="28.5"/>
+                                    </progressView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Fb0-Zu-YkM">
+                                        <rect key="frame" x="0.0" y="108" width="374" height="28.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Capital :" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="MQn-vP-kdy">
+                                                <rect key="frame" x="0.0" y="0.0" width="182" height="28.5"/>
+                                                <fontDescription key="fontDescription" name="CourierNewPS-BoldItalicMT" family="Courier New" pointSize="19"/>
+                                                <color key="textColor" systemColor="systemBlueColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZOp-qi-rzM">
+                                                <rect key="frame" x="192" y="0.0" width="182" height="28.5"/>
+                                                <fontDescription key="fontDescription" name="Palatino-BoldItalic" family="Palatino" pointSize="19"/>
+                                                <color key="textColor" systemColor="systemBlueColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <progressView opaque="NO" contentMode="center" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="n8u-YL-BYB">
+                                        <rect key="frame" x="0.0" y="151" width="374" height="28.5"/>
+                                    </progressView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="BZM-bJ-eFz">
+                                        <rect key="frame" x="0.0" y="183.5" width="374" height="28.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Continent :" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="F2T-aq-Unb">
+                                                <rect key="frame" x="0.0" y="0.0" width="182" height="28.5"/>
+                                                <fontDescription key="fontDescription" name="CourierNewPS-BoldItalicMT" family="Courier New" pointSize="19"/>
+                                                <color key="textColor" systemColor="systemBlueColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2Pr-6K-aJT">
+                                                <rect key="frame" x="192" y="0.0" width="182" height="28.5"/>
+                                                <fontDescription key="fontDescription" name="Palatino-BoldItalic" family="Palatino" pointSize="19"/>
+                                                <color key="textColor" systemColor="systemBlueColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <progressView opaque="NO" contentMode="center" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zey-Ex-Zam">
+                                        <rect key="frame" x="0.0" y="226.5" width="374" height="29"/>
+                                    </progressView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cFq-fU-KHv">
+                                        <rect key="frame" x="0.0" y="259.5" width="374" height="28.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Populution :" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="0UP-sL-IQP">
+                                                <rect key="frame" x="0.0" y="0.0" width="182" height="28.5"/>
+                                                <fontDescription key="fontDescription" name="CourierNewPS-BoldItalicMT" family="Courier New" pointSize="19"/>
+                                                <color key="textColor" systemColor="systemBlueColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="fTS-rz-FMe">
+                                                <rect key="frame" x="192" y="0.0" width="182" height="28.5"/>
+                                                <fontDescription key="fontDescription" name="Palatino-BoldItalic" family="Palatino" pointSize="19"/>
+                                                <color key="textColor" systemColor="systemBlueColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <progressView opaque="NO" contentMode="center" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gXo-m1-XRF">
+                                        <rect key="frame" x="0.0" y="302.5" width="374" height="28.5"/>
+                                    </progressView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Px-H0-L9r">
+                                        <rect key="frame" x="0.0" y="335" width="374" height="28.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timezone :" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9Z5-Qh-OAo">
+                                                <rect key="frame" x="0.0" y="0.0" width="182" height="28.5"/>
+                                                <fontDescription key="fontDescription" name="CourierNewPS-BoldItalicMT" family="Courier New" pointSize="19"/>
+                                                <color key="textColor" systemColor="systemBlueColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qAu-4N-zbs">
+                                                <rect key="frame" x="192" y="0.0" width="182" height="28.5"/>
+                                                <fontDescription key="fontDescription" name="Palatino-BoldItalic" family="Palatino" pointSize="19"/>
+                                                <color key="textColor" systemColor="systemBlueColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <progressView opaque="NO" contentMode="center" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nVe-YX-oXm">
+                                        <rect key="frame" x="0.0" y="378" width="374" height="28.5"/>
+                                    </progressView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="F0d-2b-UdJ">
+                                        <rect key="frame" x="0.0" y="410.5" width="374" height="28.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start of the Week :" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lcL-Bt-RLe">
+                                                <rect key="frame" x="0.0" y="0.0" width="182" height="28.5"/>
+                                                <fontDescription key="fontDescription" name="CourierNewPS-BoldItalicMT" family="Courier New" pointSize="19"/>
+                                                <color key="textColor" systemColor="systemBlueColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="G0q-dF-QB9">
+                                                <rect key="frame" x="192" y="0.0" width="182" height="28.5"/>
+                                                <fontDescription key="fontDescription" name="Palatino-BoldItalic" family="Palatino" pointSize="19"/>
+                                                <color key="textColor" systemColor="systemBlueColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <progressView opaque="NO" contentMode="center" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="z7P-88-1ec">
+                                        <rect key="frame" x="0.0" y="453.5" width="374" height="28.5"/>
+                                    </progressView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="d59-A5-QdM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="d2U-mX-6pE" firstAttribute="leading" secondItem="d59-A5-QdM" secondAttribute="leading" constant="20" id="7TG-54-lDK"/>
+                            <constraint firstItem="d2U-mX-6pE" firstAttribute="top" secondItem="d59-A5-QdM" secondAttribute="top" constant="20" id="9Km-9L-J5O"/>
+                            <constraint firstItem="d59-A5-QdM" firstAttribute="trailing" secondItem="8aW-2E-BqE" secondAttribute="trailing" constant="20" id="Cb5-7g-YfD"/>
+                            <constraint firstItem="8aW-2E-BqE" firstAttribute="leading" secondItem="d59-A5-QdM" secondAttribute="leading" constant="20" id="WSD-NK-d9v"/>
+                            <constraint firstItem="8aW-2E-BqE" firstAttribute="top" secondItem="d2U-mX-6pE" secondAttribute="bottom" constant="20" id="gWe-oR-SDT"/>
+                            <constraint firstItem="d59-A5-QdM" firstAttribute="bottom" secondItem="8aW-2E-BqE" secondAttribute="bottom" id="pPe-aV-PCv"/>
+                            <constraint firstItem="d59-A5-QdM" firstAttribute="trailing" secondItem="d2U-mX-6pE" secondAttribute="trailing" constant="20" id="qaS-il-GNa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Country Name" id="oQR-SM-1lr">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="location.circle.fill" catalog="system" id="vbK-25-SKv">
+                            <connections>
+                                <action selector="mapButtonTapped:" destination="w3V-XQ-dXU" id="Cdq-Na-Oc1"/>
+                                <segue destination="GaJ-iK-I5E" kind="show" identifier="goToMap" id="e65-F8-2M0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="StartOfTheWeekLabel" destination="G0q-dF-QB9" id="P8E-2P-D6d"/>
+                        <outlet property="capitalLabel" destination="ZOp-qi-rzM" id="KjM-oN-dJA"/>
+                        <outlet property="continentsLabel" destination="2Pr-6K-aJT" id="vxH-4D-FQ2"/>
+                        <outlet property="flagImageView" destination="d2U-mX-6pE" id="kcr-yh-KVd"/>
+                        <outlet property="officialNameLabel" destination="cT0-v1-SVx" id="PRL-se-WrX"/>
+                        <outlet property="populutionLabel" destination="fTS-rz-FMe" id="nOq-pz-p7V"/>
+                        <outlet property="timezonelabel" destination="qAu-4N-zbs" id="5vz-ic-swf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uyy-cV-BvF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1921.7391304347827" y="-7.3660714285714279"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="eJa-50-ux6">
+            <objects>
+                <viewController id="GaJ-iK-I5E" customClass="MapViewController" customModule="Countries" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Ez-VT-2F4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YY4-Gf-fzQ">
+                                <rect key="frame" x="0.0" y="140" width="414" height="722"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2fi-S9-gL1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2fi-S9-gL1" firstAttribute="bottom" secondItem="YY4-Gf-fzQ" secondAttribute="bottom" id="0D2-Tv-e9h"/>
+                            <constraint firstItem="YY4-Gf-fzQ" firstAttribute="top" secondItem="2fi-S9-gL1" secondAttribute="top" id="UAP-VP-ovN"/>
+                            <constraint firstItem="2fi-S9-gL1" firstAttribute="trailing" secondItem="YY4-Gf-fzQ" secondAttribute="trailing" id="hz7-iJ-rVD"/>
+                            <constraint firstItem="YY4-Gf-fzQ" firstAttribute="leading" secondItem="2fi-S9-gL1" secondAttribute="leading" id="qvU-eN-bOP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="RJM-du-DCH"/>
+                    <connections>
+                        <outlet property="mapView" destination="YY4-Gf-fzQ" id="D2n-tr-6PC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A42-qe-V5K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2659" y="-10"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="e3Z-Ue-C4v">
             <objects>
@@ -94,6 +306,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="location.circle.fill" catalog="system" width="128" height="121"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
